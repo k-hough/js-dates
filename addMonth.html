@@ -1,0 +1,41 @@
+<!--Write a function that takes 1 arg, a string containing a date formatted as "year-month-day", for example "2017-6-11". Return the next month as a number.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var input = prompt("Enter a Date in year-month-day Format");
+
+    var addMonth = function(month) {
+        var inputParts = input.split("-");
+        var year = parseInt(inputParts[0]);
+        var month = parseInt(inputParts[1]);
+        var day = parseInt(inputParts[2]);
+        var date = new Date(year, month - 1, day);
+        var addNewMonth = date.getMonth();
+        if (addNewMonth == 11) {
+            addNewMonth = 1;
+        }
+        else {
+            addNewMonth = addNewMonth + 2;
+        }
+        return addNewMonth;
+    };
+
+    $("output").innerHTML = addMonth(input);
+
+    </script>
+
+</body>
+</html>
