@@ -1,0 +1,37 @@
+<!--Write a function that takes 1 arg, a string containing a date formatted as "year-month-day", for example "2017-6-11". Return a string containing the date one month in the future, formatted as "year-month-day".-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var input = prompt("Enter a Date in year-month-day Format");
+
+    var addMonthDate = function(input) {
+        var inputParts = input.split("-");
+        var year = parseInt(inputParts[0]);
+        var month = parseInt(inputParts[1]);
+        var day = parseInt(inputParts[2]);
+        var date = new Date(year, month, day);
+        var addMonthDate = date.getMonth() + 1;
+        addMonthDate = year + "-" + addMonthDate + "-" + day;
+        return addMonthDate;
+    };
+
+    $("output").innerHTML = addMonthDate(input);
+
+    </script>
+
+</body>
+</html>
