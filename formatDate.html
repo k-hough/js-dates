@@ -1,0 +1,26 @@
+<!--Create a Date object that represents any date in the past. Then display the date with this format: "day of week month day year".-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var yesterday = new Date(2017, 5, 9);
+    var yesterdayString = yesterday.toDateString();
+
+    $("output").innerHTML = yesterdayString;
+
+    </script>
+
+</body>
+</html>
