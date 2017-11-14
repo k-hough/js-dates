@@ -1,0 +1,39 @@
+<!--Write a function that takes 1 arg, a string containing the 3 character abbreviation for a month name. Return an integer that represents the number of days in that month. Use 28 for "Feb".-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var input = prompt("Enter a 3 character abbreviation for a month name in lower case");
+
+    var daysMonth = function(month) {
+
+        var months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+        var numDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        for (var i = 0; i < months.length; i++) {
+            if (month == months[i]) {
+                var days = numDays[i];
+                return days;
+            }
+        }
+        return -1;
+    };
+
+    $("output").innerHTML = daysMonth(input);
+
+    </script>
+
+</body>
+</html>
