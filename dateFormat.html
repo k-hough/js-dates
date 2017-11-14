@@ -1,0 +1,34 @@
+<!--Write a function that takes 1 arg, a string containing a date formatted as "year-month-day", for example "2017-6-14". In the function, create 3 integers for the year, month, and day and use those integers to create and return a Date object.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var input = prompt("Enter a Date in year-month-day Format");
+
+    var dateFormat = function(input) {
+      var inputParts = input.split("-");
+      var year = parseInt(inputParts[0]);
+      var month = parseInt(inputParts[1]);
+      var day = parseInt(inputParts[2]);
+      var dateFormat = new Date(year, month - 1, day);
+      return dateFormat;
+    };
+
+    $("output").innerHTML = dateFormat(input);
+
+    </script>
+
+</body>
+</html>
