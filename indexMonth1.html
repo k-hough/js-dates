@@ -1,0 +1,36 @@
+<!--Write a function that takes 1 arg, a string containing the 3 character abbreviation for a month name. Return an integer that represents that month. The integer should be the same month value that's used by the Date constructor to create a Date object. For example, the integer that represents "Jun" is 5.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+
+    var input = prompt("Enter a 3 character abbreviation for a month name in lower case");
+
+    var indexMonth = function(array, month) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] == month) {
+                return i;
+                break;
+            }
+        }
+    };
+
+    $("output").innerHTML = indexMonth(months, input);
+
+    </script>
+
+</body>
+</html>
